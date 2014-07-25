@@ -15,3 +15,5 @@ you can send messages to nsqd like so:
 See your message:
 
     watch -n 0.5 "curl -s http://172.17.42.1:4151/stats"
+
+Questions? rexposadas@yahoo.com  / @rexposadas
