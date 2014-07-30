@@ -12,4 +12,5 @@ RUN mkdir -p /data
 VOLUME ["/data"]
 EXPOSE 4150
 EXPOSE 4151
-CMD /usr/local/bin/nsqd --data-path=/data --broadcast-address=$BROADCAST_ADDRESS --lookupd-tcp-address=$LOOKUPD_ADDRESS
+ENTRYPOINT [ "/usr/local/bin/nsqd" ]
+CMD [ "--data-path=/data", "--broadcast-address=$BROADCAST_ADDRESS", "--lookupd-tcp-address=$LOOKUPD_ADDRESS" ]
