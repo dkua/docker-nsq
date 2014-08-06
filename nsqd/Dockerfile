@@ -7,10 +7,9 @@ RUN wget https://s3.amazonaws.com/bitly-downloads/nsq/nsq-0.2.30.linux-amd64.go1
 RUN tar zxvf nsq-0.2.30.linux-amd64.go1.3.tar.gz
 RUN mkdir -p /usr/local/bin
 RUN cp /nsq-0.2.30.linux-amd64.go1.3/bin/nsqd /usr/local/bin
- 
+
 RUN mkdir -p /data
 VOLUME ["/data"]
 EXPOSE 4150
 EXPOSE 4151
-ENTRYPOINT [ "/usr/local/bin/nsqd" ]
-CMD [ "--data-path=/data", "--broadcast-address=$BROADCAST_ADDRESS", "--lookupd-tcp-address=$LOOKUPD_ADDRESS" ]
+CMD /usr/local/bin/nsqd --data-path=/data --broadcast-address=$BROADCAST_ADDRESS

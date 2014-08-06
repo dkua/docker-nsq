@@ -9,4 +9,5 @@ RUN mkdir -p /usr/local/bin
 RUN cp /nsq-0.2.30.linux-amd64.go1.3/bin/nsqadmin /usr/local/bin
  
 EXPOSE 4171
-CMD /usr/local/bin/nsqadmin --lookupd-http-address=$LOOKUPD_ADDRESS
+
+CMD /usr/local/bin/nsqadmin --nsqd-http-address=$NSQD_ADDRESS
